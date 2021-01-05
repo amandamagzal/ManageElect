@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1064.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundary.LoginScreen">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="1071.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/login.jpg" />
+         </image>
+      </ImageView>
+      <Label contentDisplay="CENTER" layoutX="178.0" layoutY="50.0" prefHeight="77.0" prefWidth="366.0" text="Manage Elect">
+         <font>
+            <Font name="Californian FB" size="64.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="499.0" layoutY="228.0" prefHeight="166.0" prefWidth="181.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <JFXPasswordField fx:id="password" focusColor="BLACK" labelFloat="true" onKeyReleased="#loginPressed" promptText="Password" unFocusColor="BLACK" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Californian FB" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXPasswordField>
+            <JFXTextField fx:id="username" focusColor="BLACK" labelFloat="true" onKeyReleased="#loginPressed" promptText="Username" unFocusColor="BLACK">
+               <font>
+                  <Font name="Californian FB" size="24.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXTextField>
+         </children>
+      </GridPane>
+      <JFXButton fx:id="btn_login" buttonType="RAISED" layoutX="544.0" layoutY="425.0" onAction="#login" onKeyReleased="#loginPressed" ripplerFill="WHITE" style="-fx-background-color: black;" text="Login" textFill="WHITE">
+         <font>
+            <Font name="Californian FB Bold" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label contentDisplay="CENTER" layoutX="291.0" layoutY="127.0" prefHeight="77.0" prefWidth="140.0" text="2020">
+         <font>
+            <Font name="Californian FB" size="64.0" />
+         </font>
+      </Label>
+      <Label fx:id="errorLabel" layoutX="773.0" layoutY="508.0" textFill="#cd0000" />
+   </children>
+</Pane>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Badges" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="48b6663c-a353-47a6-94a7-faa7b2e7656a">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ManageElectUCA"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT tblVoter.[Voter ID], tblVoter.[First Name], tblVoter.[Last Name], tblPosition.[Ballot ID], tblPosition.[Start Time], tblPosition.[Finish Time]
+FROM tblPosition INNER JOIN tblVoter ON tblPosition.[Member ID] = tblVoter.[Voter ID]
+WHERE tblPosition.[Ballot ID] Is Not Null]]>
+	</queryString>
+	<field name="Voter ID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Voter ID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tblVoter"/>
+	</field>
+	<field name="First Name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="First Name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tblVoter"/>
+	</field>
+	<field name="Last Name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Last Name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tblVoter"/>
+	</field>
+	<field name="Ballot ID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Ballot ID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tblPosition"/>
+	</field>
+	<field name="Start Time" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="Start Time"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tblPosition"/>
+	</field>
+	<field name="Finish Time" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="Finish Time"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tblPosition"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="117" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="0" y="0" width="100" height="30" uuid="d26d96d3-7999-406c-997a-d5afcad98861"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Californian FB"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="53" y="30" width="448" height="49" uuid="4f7364c6-3d47-423e-a462-42f7bfaed100"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Californian FB" size="26" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Badges for Observers]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="172" splitType="Stretch">
+			<textField>
+				<reportElement x="340" y="20" width="100" height="30" uuid="9d915e9b-3600-45f1-a598-a9326cd2d642">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="aca104c2-b4ab-4fb9-8fad-f040c91fd91b"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Californian FB" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Voter ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="20" width="100" height="30" uuid="23a453df-b30b-4787-81b3-045ae8cc8eda">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2b9c2155-40a2-4709-960a-1d455e20a0d7"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Californian FB" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{First Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="227" y="20" width="100" height="30" uuid="0f4a0fba-5101-433a-a779-aa01f723f7eb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2c1599d1-54bc-4488-a535-f97f2d66966a"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Californian FB" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Last Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="70" width="40" height="30" uuid="1da515e9-a5a4-4e0f-bac4-20b1e5bf43b9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9e09ab3c-e609-49ae-8af3-507267a56f33"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Californian FB" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Ballot ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="70" width="100" height="30" uuid="5cea716a-851a-4eeb-a831-3918a9050313">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="31042b85-56e6-4a49-af4e-b0f0f25c0ff4"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Californian FB" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Start Time}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="70" width="100" height="30" uuid="d7ecf733-5787-44ac-9f63-24f8f88008ed">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="eb700713-1680-4d54-8efa-26ce7466f9c0"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Californian FB" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Finish Time}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="80" y="70" width="80" height="30" uuid="f4aafd63-9c1a-499f-94c2-d82289a588f9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Californian FB" size="14"/>
+				</textElement>
+				<text><![CDATA[At Ballot:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="70" width="50" height="30" uuid="f6199f39-d268-4966-8ba2-bbb4c49b53f3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Californian FB" size="14"/>
+				</textElement>
+				<text><![CDATA[From:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="70" width="30" height="30" uuid="f19e177f-29c4-49cc-9bba-dd1cc5dfb82d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Californian FB" size="14"/>
+				</textElement>
+				<text><![CDATA[To:]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

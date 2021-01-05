@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="main_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="719.0" prefWidth="1064.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundary.RidesScreen">
+   <children>
+      <ImageView fitHeight="730.0" fitWidth="1083.0" layoutX="-9.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/background.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="237.0" layoutY="14.0" text="Rides to Ballot" underline="true">
+         <font>
+            <Font name="Californian FB Bold" size="50.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btn_menu" buttonType="RAISED" layoutX="903.0" layoutY="30.0" onAction="#back" ripplerFill="WHITE" style="-fx-background-color: BLACK;" text="Main Menu" textFill="WHITE">
+         <font>
+            <Font name="Californian FB Bold" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <TableView fx:id="tbl_Rides" layoutX="292.0" layoutY="176.0" onMouseReleased="#rideSelected" prefHeight="327.0" prefWidth="480.0">
+         <columns>
+            <TableColumn fx:id="col_voterID" prefWidth="160.0" text="Voter ID" />
+            <TableColumn fx:id="col_driverID" prefWidth="160.0" text="Driver ID" />
+            <TableColumn fx:id="col_pickupTime" prefWidth="160.0" text="Pickup Time" />
+         </columns>
+      </TableView>
+      <JFXButton fx:id="btn_new" buttonType="RAISED" layoutX="355.0" layoutY="566.0" onAction="#add" prefHeight="44.0" prefWidth="99.0" ripplerFill="WHITE" style="-fx-background-color: darkcyan;" text="New" textFill="WHITE">
+         <font>
+            <Font name="Californian FB Bold" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btn_edit" buttonType="RAISED" layoutX="483.0" layoutY="566.0" onAction="#add" prefHeight="44.0" prefWidth="99.0" ripplerFill="WHITE" style="-fx-background-color: darkcyan;" text="Edit" textFill="WHITE">
+         <font>
+            <Font name="Californian FB Bold" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="209.0" layoutY="326.0" rotate="-90.0" text="Rides">
+         <font>
+            <Font name="Californian FB" size="24.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btn_delete" buttonType="RAISED" layoutX="610.0" layoutY="566.0" onAction="#delete" ripplerFill="WHITE" style="-fx-background-color: darkcyan;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="Californian FB Bold" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

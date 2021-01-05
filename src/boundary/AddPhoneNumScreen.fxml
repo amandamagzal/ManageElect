@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="main_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="719.0" prefWidth="1064.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundary.AddPhoneScreen">
+   <children>
+      <ImageView fitHeight="730.0" fitWidth="1083.0" layoutX="-9.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/background.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="112.0" layoutY="150.0" text="Voters" underline="true">
+         <font>
+            <Font name="Californian FB Bold" size="36.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btn_menu" buttonType="RAISED" layoutX="903.0" layoutY="30.0" onAction="#back" ripplerFill="WHITE" style="-fx-background-color: BLACK;" text="Main Menu" textFill="WHITE">
+         <font>
+            <Font name="Californian FB Bold" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btn_add" buttonType="RAISED" layoutX="364.0" layoutY="497.0" onAction="#showNum" prefHeight="44.0" prefWidth="99.0" ripplerFill="WHITE" style="-fx-background-color: darkcyan;" text="Add" textFill="WHITE">
+         <font>
+            <Font name="Californian FB Bold" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btn_edit" buttonType="RAISED" layoutX="513.0" layoutY="497.0" onAction="#showNum" prefHeight="44.0" prefWidth="99.0" ripplerFill="WHITE" style="-fx-background-color: darkcyan;" text="Edit" textFill="WHITE">
+         <font>
+            <Font name="Californian FB Bold" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <TableView fx:id="tbl_Voters" layoutX="112.0" layoutY="207.0" onMouseReleased="#voterSelected" prefHeight="256.0" prefWidth="842.0">
+         <columns>
+            <TableColumn fx:id="col_voterID" prefWidth="140.0" text="Voter ID" />
+            <TableColumn fx:id="col_firstName" prefWidth="140.0" text="First Name" />
+            <TableColumn fx:id="col_lastName" prefWidth="140.0" text="Last Name" />
+            <TableColumn fx:id="col_birthDate" prefWidth="140.0" text="Birth Date" />
+            <TableColumn fx:id="col_gender" prefWidth="140.0" text="Gender" />
+            <TableColumn fx:id="col_phoneNum" prefWidth="140.0" text="Phone Number" />
+         </columns>
+      </TableView>
+      <Label layoutX="143.0" layoutY="14.0" text="Add Voter's Phone Num" underline="true">
+         <font>
+            <Font name="Californian FB Bold" size="50.0" />
+         </font>
+      </Label>
+      <Pane fx:id="pane_phoneNum" layoutX="334.0" layoutY="608.0">
+         <children>
+            <JFXTextField fx:id="phoneNum" focusColor="BLACK" layoutX="184.0" layoutY="18.0" unFocusColor="BLACK" />
+            <Label layoutY="20.0" text="Phone Number:">
+               <font>
+                  <Font name="Californian FB" size="24.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btn_save" buttonType="RAISED" layoutX="398.0" layoutY="11.0" onAction="#saveClick" ripplerFill="WHITE" style="-fx-background-color: darkcyan;" text="Save" textFill="WHITE">
+               <font>
+                  <Font name="Californian FB Bold" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btn_cancel" buttonType="RAISED" layoutX="502.0" layoutY="11.0" onAction="#cancelClick" ripplerFill="WHITE" style="-fx-background-color: darkcyan;" text="Cancel" textFill="WHITE">
+               <font>
+                  <Font name="Californian FB Bold" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </Pane>
+      <JFXButton fx:id="btn_delete" buttonType="RAISED" layoutX="655.0" layoutY="497.0" onAction="#delete" ripplerFill="WHITE" style="-fx-background-color: darkcyan;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="Californian FB Bold" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

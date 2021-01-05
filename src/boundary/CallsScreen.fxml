@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="main_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="719.0" prefWidth="1064.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundary.CallsScreen">
+   <children>
+      <ImageView fitHeight="730.0" fitWidth="1083.0" layoutX="-9.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/background.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="165.0" layoutY="22.0" text="Voters" underline="true">
+         <font>
+            <Font name="Californian FB Bold" size="50.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btn_menu" buttonType="RAISED" layoutX="903.0" layoutY="30.0" onAction="#back" ripplerFill="WHITE" style="-fx-background-color: BLACK;" text="Main Menu" textFill="WHITE">
+         <font>
+            <Font name="Californian FB Bold" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btn_new" buttonType="RAISED" layoutX="532.0" layoutY="30.0" onAction="#add" ripplerFill="WHITE" style="-fx-background-color: darkcyan;" text="New Call" textFill="WHITE">
+         <font>
+            <Font name="Californian FB Bold" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <TableView fx:id="tbl_CallInfo" layoutX="9.0" layoutY="427.0" onMouseReleased="#callSelected" prefHeight="285.0" prefWidth="1046.0">
+         <columns>
+            <TableColumn fx:id="col_callNum" prefWidth="87.0" text="Call Num" />
+            <TableColumn fx:id="col_voterID" prefWidth="87.0" text="Voter ID" />
+            <TableColumn fx:id="col_callerID" prefWidth="87.0" text="Caller ID" />
+            <TableColumn fx:id="col_date" prefWidth="87.0" text="Date" />
+            <TableColumn fx:id="col_time" prefWidth="87.0" text="Time" />
+            <TableColumn fx:id="col_answer" prefWidth="87.0" text="Answered" />
+            <TableColumn fx:id="col_voteAnswer" prefWidth="87.0" text="Vote Ans" />
+            <TableColumn fx:id="col_supportAnswer" prefWidth="87.0" text="Support Ans" />
+            <TableColumn fx:id="col_courseAnswer" prefWidth="87.0" text="Course Ans" />
+            <TableColumn fx:id="col_rideAnswer" prefWidth="87.0" text="Ride Ans" />
+            <TableColumn fx:id="col_pickupStart" prefWidth="87.0" text="Pickup From" />
+            <TableColumn fx:id="col_pickupEnd" prefWidth="87.0" text="Pickup To" />
+         </columns>
+      </TableView>
+      <Label layoutX="180.0" layoutY="347.0" text="Calls" underline="true">
+         <font>
+            <Font name="Californian FB Bold" size="50.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btn_edit" buttonType="RAISED" layoutX="661.0" layoutY="355.0" onAction="#edit" ripplerFill="WHITE" style="-fx-background-color: darkcyan;" text="Edit" textFill="WHITE">
+         <font>
+            <Font name="Californian FB Bold" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btn_delete" buttonType="RAISED" layoutX="755.0" layoutY="355.0" onAction="#delete" ripplerFill="WHITE" style="-fx-background-color: darkcyan;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="Californian FB Bold" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <TableView fx:id="tbl_Voters" layoutX="112.0" layoutY="109.0" onMouseReleased="#voterSelected" prefHeight="200.0" prefWidth="841.0">
+         <columns>
+            <TableColumn fx:id="col_id" prefWidth="140.0" text="Voter ID" />
+            <TableColumn fx:id="col_firstName" prefWidth="140.0" text="First Name" />
+            <TableColumn fx:id="col_lastName" prefWidth="140.0" text="Last Name" />
+            <TableColumn fx:id="col_birthDate" prefWidth="140.0" text="Birth Date" />
+            <TableColumn fx:id="col_gender" prefWidth="140.0" text="Gender" />
+            <TableColumn fx:id="col_phoneNum" prefWidth="140.0" text="Phone Number" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>
